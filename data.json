@@ -11,9 +11,22 @@
       "Address": "Mokhampur new firends colony lane no 2 Badri kripa",
       "Amount": 5000000,
       "Photo": "photos/camera-input-2025-10-05T13_55_47.187Z.jpg"
+    },
+    {
+      "Name": "Rajendra",
+      "Address": "Italy",
+      "Amount": 100000,
+      "Photo": ""
     }
   ],
-  "Haldi": [],
+  "Haldi": [
+    {
+      "Name": "aditi",
+      "Address": "heleo",
+      "Amount": 500000,
+      "Photo": "photos/camera-input-2025-10-05T14_04_54.826Z.jpg"
+    }
+  ],
   "Shaadi": [],
   "Reception": []
 }

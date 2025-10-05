@@ -6,6 +6,7 @@ from typing import Dict, List, Any
 
 import pandas as pd
 import streamlit as st
+import streamlit.components.v1 as components
 try:
     from reportlab.lib.pagesizes import A4
     from reportlab.lib import colors
@@ -14,6 +15,39 @@ try:
     REPORTLAB_AVAILABLE = True
 except Exception:
     REPORTLAB_AVAILABLE = False
+
+def inject_seo_tags():
+    seo_html = """
+    <head>
+        <title>Niyota – Indian Wedding Money Collection & Gift Tracker</title>
+        <meta name="description" content="Easily manage Niyotas (wedding gift money) for Indian weddings including Mehndi, Haldi, Shaadi, and Reception. Track guest contributions, export reports, and manage all wedding gift data seamlessly.">
+        <meta name="keywords" content="Niyota management, wedding money tracker, Indian wedding gift collection, Shaadi contribution app, manage wedding cash gifts, Indian wedding dashboard, Niyota tracker">
+        <meta name="author" content="Niyota App by Vidish Bijalwan">
+        <meta property="og:title" content="Niyota – Wedding Gift Money Manager">
+        <meta property="og:description" content="Simplify Niyota management for Indian weddings. Track all money gifts by event — Mehndi, Haldi, Shaadi, Reception. Export to Excel or PDF.">
+        <meta property="og:type" content="website">
+        <meta property="og:image" content="/home/zerosirus/Projects/Niyota-Project/uploads/Indian Wedding Envelope Assorted Color Designs Fancy Packet Invitation.jpeg
+        <meta property="og:url" content="https://shaddii.streamlit.app/
+        <meta name="robots" content="index, follow">
+        <script type="application/ld+json">
+        {
+          "@context": "https://schema.org",
+          "@type": "SoftwareApplication",
+          "name": "Niyota – Wedding Money Collection Manager",
+          "applicationCategory": "Wedding Management Software",
+          "operatingSystem": "Web",
+          "description": "An app to manage and track wedding money collections (Niyotas) for Indian weddings. Handle multiple events like Mehndi, Haldi, Shaadi, and Reception with photo capture, dashboard analytics, and export options.",
+          "offers": {
+            "@type": "Offer",
+            "price": "0",
+            "priceCurrency": "INR"
+          }
+        }
+        </script>
+    </head>
+    """
+    # Height set to 0 to avoid visible container; Streamlit will still mount the HTML.
+    components.html(seo_html, height=0)
 
 APP_TITLE = "Niyota – Wedding Money Collection"
 BASE_DIR = os.path.dirname(os.path.abspath(__file__))
@@ -368,6 +402,8 @@ def dashboard_view():
 
 def main():
     st.set_page_config(page_title=APP_TITLE, page_icon="💌", layout="wide")
+    # Inject SEO/meta tags for better previews and indexing
+    inject_seo_tags()
     init_session_state()
 
     st.title("Niyota")

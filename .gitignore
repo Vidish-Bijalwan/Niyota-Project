@@ -1,0 +1,25 @@
+# Python
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+.venv/
+venv/
+.env
+
+# Streamlit
+.streamlit/
+
+# OS
+.DS_Store
+Thumbs.db
+
+# App data
+uploads/
+photos/
+*.xlsx
+*.pdf
+
+# Models / large assets
+vosk-model*/
+vosk-model-small-en-us-0.15/
